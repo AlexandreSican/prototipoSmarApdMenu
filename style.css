@@ -65,7 +65,6 @@ body {
     align-items: center;
     height: 50px;
     color: var(--menu-color-primary);
-    animation: animationBgcOpened 1s ease;
 }
 
 .container-menu {
