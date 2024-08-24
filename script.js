@@ -1,16 +1,20 @@
-const menuClosed = document.querySelector('.main-container')
-const menuOpened = document.querySelector('.main-container-opened')
-const btnMenuClosed = document.querySelector('.menu-span')
-const btnMenuOpened = document.querySelector('.menu-span-opened')
+let menuOpen = document.querySelector('.menu-items')
+let btnOpenMenu = document.querySelector('.menu-btn-open button')
+let changeIcon = document.querySelector('.menu-btn-open i')
 
 
-btnMenuClosed.addEventListener('click', () => {
-    menuOpened.style.display = 'flex'
-    menuClosed.style.display = 'none'
-})
+btnOpenMenu.addEventListener('click', () => {
+    
+    let menuHeight = document.querySelector('.menu-items').clientHeight
 
+    if(menuHeight <= 150){
+        menuOpen.style.maxHeight = "190px"
+        btnOpenMenu.innerHTML = '<p>Fechar Menu</p> <i class="fa-solid fa-angles-up"></i>'
+       
 
-btnMenuOpened.addEventListener('click', () => {
-    menuOpened.style.display = 'none'
-    menuClosed.style.display = 'flex'
+    }else if(menuHeight >= 150){
+        menuOpen.style.maxHeight = "90px"
+        btnOpenMenu.innerHTML = '<p>Expandir Menu</p> <i class="fa-solid fa-angles-down"></i>'
+      
+    }
 })
